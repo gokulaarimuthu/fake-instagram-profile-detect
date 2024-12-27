@@ -1,0 +1,138 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Secure Social</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+        <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
+        />
+        <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+    </head>
+    <body>
+        
+
+        <div class="container">
+            <div class="sections" id="home">
+                <h1>Instagram Fake Profile detection</h1>
+        </div>
+        <div class="container">
+
+
+            <div class="sections" id="home">
+                <nav>
+                    <ul>
+                       <h1 class="button-container"> <a href="{{ url_for('input_username_form') }}"><li>Detector</li></a> </h1>
+                        <h1 class="button-container"><a href="{{ url_for('input_manual_form') }}"><li>Manual</li></a> </h1>
+                    </ul>
+                </nav>
+            <footer>
+               
+            </footer>
+        </div>
+        
+        <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+        <script>
+
+            const swiper = new Swiper('#swiper1', {
+                effect: 'coverflow',
+                grabCursor: true,
+                centeredSlides: true,
+                slidesPerView: 'auto',
+                coverflowEffect: {
+                    rotate: 50,
+                    stretch: 0,
+                    depth: 100,
+                    modifier: 1,
+                    slideShadows: true,
+                },
+                // direction: 'horizontal',
+                // loop: true,
+                pagination: {
+                    el: '#swiper-2 .swiper-pagination', // Use a unique selector for the pagination
+                    clickable: true,
+                },
+                navigation: {
+                    nextEl: '#swiper-2 .swiper-button-next', // Use a unique selector for the next button
+                    prevEl: '#swiper-2 .swiper-button-prev', // Use a unique selector for the prev button
+                },
+                autoplay: {
+                    delay: 2500,
+                },
+            });      
+        </script>
+        <script>
+            const swiper2 = new Swiper('#swiper-2', {
+                // Optional parameters for the second Swiper instance
+                effect: 'coverflow',
+                grabCursor: true,
+                centeredSlides: true,
+                slidesPerView: 'auto',
+                coverflowEffect: {
+                    rotate: 50,
+                    stretch: 0,
+                    depth: 100,
+                    modifier: 1,
+                    slideShadows: true,
+                },
+                // direction: 'horizontal',
+                // loop: true,
+                pagination: {
+                    el: '#swiper-2 .swiper-pagination', // Use a unique selector for the pagination
+                    clickable: true,
+                },
+                navigation: {
+                    nextEl: '#swiper-2 .swiper-button-next', // Use a unique selector for the next button
+                    prevEl: '#swiper-2 .swiper-button-prev', // Use a unique selector for the prev button
+                },
+                autoplay: {
+                    delay: 9000,
+                },
+            });
+        </script>
+        <!-- <script>
+        var typed = new Typed('#element', {
+            strings: [],
+            typeSpeed: 50,
+        }); -->
+        </script>
+        <script>
+            var typed = new Typed('#typed', {
+            stringsElement: '#typed-strings',
+            typeSpeed: 50,
+            });
+        </script>
+        <script>
+            window.addEventListener("scroll", function(){
+                var scrollY = this.scrollY;
+                console.log(scrollY);
+                goBack(scrollY);
+                colorNav(scrollY);
+            })
+            
+            const nav = document.querySelectorAll("nav ul li");
+            function colorNav(value){
+                if(value >= 2200){
+                    for(let i=0; i<nav.length; i++){
+                        nav[i].style.color = "white";
+                    }
+                }else{
+                    for(let i=0; i<nav.length; i++){
+                        nav[i].style.color = "#0F172Aff";
+                    }
+                }
+            }
+
+            function goBack(value){
+                if(value >= 350){
+                    document.querySelector(".goBack").style.visibility = 'visible';
+                }
+            }
+        </script>
+    </body>
+    </html>
